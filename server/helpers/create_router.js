@@ -33,7 +33,7 @@ const createRouter = function (collection) {
     .catch(errorLog);
   });
 
-  router.put('/:id', (req, res) => {
+  router.patch('/:id', (req, res) => {
     const id = req.params.id;
     const changedData = req.body;
     collection.findOneAndUpdate(

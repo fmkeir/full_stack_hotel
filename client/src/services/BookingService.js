@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/bookings';
+const baseURL = 'http://localhost:3000/api/bookings/';
 
 export default {
   getBookings(){
@@ -21,9 +21,11 @@ export default {
     })
   },
 
-  updateBooking(id, payload) {
+  updateBooking(payload) {
+    const id = payload._id
+    delete payload._id
     return fetch(baseURL + id, {
-      method: 'PUT',
+      method: 'PATCH',
       body: JSON.stringify(payload),
       headers: {'Content-Type': 'application/json'}
     })
