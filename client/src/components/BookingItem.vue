@@ -55,7 +55,7 @@ export default {
     handleUpdate(event){
       this.booking.name = event.target.elements[0].value
       this.booking.emailAddress = event.target.elements[1].value
-      eventBus.$emit('update-b#1ooking', this.booking)
+      eventBus.$emit('update-booking', this.booking)
       this.edit = false
     }
   }
